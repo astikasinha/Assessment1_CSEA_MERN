@@ -1,0 +1,44 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+</head>
+<body>
+    <h1>Generated Resume</h1>
+    <div id="resumeContent">
+        <!-- Data will be populated here -->
+    </div>
+
+    
+    <script>
+        // Function to get URL parameters
+        function getParameterByName(name) {
+            const url = new URL(window.location.href);
+            return url.searchParams.get(name);
+        }
+
+        // Get data from URL parameters
+        const name = getParameterByName("name");
+        const email = getParameterByName("email");
+        const phone = getParameterByName("phone");
+        const work = getParameterByName("phone");
+        const github = getParameterByName("phone");
+        const linkedin = getParameterByName("phone");
+        // Display data in the resumeContent div
+        const resumeContent = document.getElementById("resumeContent");
+        resumeContent.innerHTML = `
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Phone:</strong> ${phone}</p>
+            <p><strong>Phone:</strong> ${work}</p>
+            <p><strong>Phone:</strong> ${github}</p>
+            <p><strong>Phone:</strong> ${linkedin}</p>
+        `;
+    </script>
+    <button type="button" onclick="GenerateResume()" style="background-color: blue; color: azure; width: 100%; font-size: 30px;">Download Resume</button>
+</body>
+</html>

@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 style="text-align: center;">Resume Builder</h1>
+    <div class="container">
+        <form id="f">
+            <label for="name">Name</label><br>
+            <input type="text" name="name" id="name" required><br><br>
+            
+            <label for="email">Email</label><br>
+            <input type="email" name="email" id="email" required><br><br>
+            
+            <label for="phone">Phone Number</label><br>
+            <input type="tel" name="phone" id="phone" required><br><br>
+            
+            <label for="LinkedIn">LinkedIn Profile</label><br>
+            <input type="url" name="LinkedIn" id="LinkedIn"><br><br>
+            
+            <label for="Github">Github Profile</label><br>
+            <input type="url" name="Github" id="Github"><br><br>
+            
+            <label for="Work">Work Experience</label><br>
+            <input type="text" name="Work" id="Work"><br><br>
+            
+            <label for="Education">Education</label><br>
+            <input type="text" name="Education" id="Education"><br><br>
+            
+            <label for="Photo">Upload Photo</label><br>
+            <input type="file" name="Photo" id="Photo"><br><br><br>
+
+          
+            <button type="button" onclick="GenerateResume()" style="background-color: blue; color: azure; width: 100%; font-size: 30px;">Generate Resume</button>
+        </form>
+    </div>
+
+    <script>
+        function GenerateResume() {
+            
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const linkedin = document.getElementById("LinkedIn").value;
+            const github = document.getElementById("Github").value;
+            const work = document.getElementById("Work").value;
+            const education = document.getElementById("Education").value;
+            const photo = document.getElementById("Photo").files[0];
+
+          
+            if (!name || !email || !phone) {
+                alert("Please fill out all required fields.");
+                return;
+            }
+            window.location.href = "resumegenerate.html";
+
+        }
+    </script>
+</body>
+</html>
